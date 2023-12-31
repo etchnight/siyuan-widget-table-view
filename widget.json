@@ -1,16 +1,16 @@
 {
-  "name": "widget-sample",
-  "author": "Vanessa",
-  "url": "https://github.com/siyuan-note/widget-sample",
-  "version": "0.0.3",
+  "name": "siyuan-widget-table-view",
+  "author": "dualwind",
+  "url": "https://github.com/etchnight/siyuan-widget-table-view",
+  "version": "0.0.1",
   "minAppVersion": "2.8.8",
   "displayName": {
-    "default": "Widget Sample",
-    "zh_CN": "挂件示例"
+    "default": "Table View",
+    "zh_CN": "表格展示"
   },
   "description": {
-    "default": "This is a widget sample",
-    "zh_CN": "这是一个挂件示例"
+    "default": "Display notes in a table based on tags",
+    "zh_CN": "根据标签用表格形式展示笔记"
   },
   "readme": {
     "default": "README.md",
@@ -21,10 +21,9 @@
     "patreon": "",
     "github": "",
     "custom": [
-      "https://ld246.com/sponsor"
     ]
   },
   "keywords": [
-    "sample", "示例"
+    "table", "表格"
   ]
 }
