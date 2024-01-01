@@ -12,6 +12,7 @@ import { onMounted, ref } from "vue";
 import axios from "axios";
 
 const state = ref("");
+//let tags = [];
 const tagsRef = ref([]);
 const emit = defineEmits(["tagSelected"]);
 
@@ -46,10 +47,10 @@ const createFilter = (queryString: string) => {
 };
 
 const handleSelect = (item: Record<string, any>) => {
-  item.children = tagsRef.value.filter((tag) => {
+  let children = tagsRef.value.filter((tag) => {
     return tag.value.indexOf(item.value) === 0 && tag.value !== item.value;
   });
-  emit("tagSelected", item);
+  emit("tagSelected", item, children);
 };
 
 onMounted(async () => {

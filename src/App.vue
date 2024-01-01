@@ -1,7 +1,14 @@
 <template>
   <el-row>
     <el-col :span="6">
-      <SelectTag @tagSelected="(msg) => (selectedTag = msg)" />
+      <SelectTag
+        @tagSelected="
+          (item, children) => {
+            selectedTag = item;
+            columnProps = children;
+          }
+        "
+      />
     </el-col>
     <el-col :span="6">
       {{ selectedTag.value }}
@@ -9,7 +16,7 @@
   </el-row>
   <el-row>
     <el-col :span="24">
-      <Table :tableHead="selectedTag" />
+      <Table :tag="selectedTag.value" :columnProps="columnProps" />
     </el-col>
   </el-row>
 </template>
@@ -20,7 +27,8 @@ import { ref } from "vue";
 import SelectTag from "./components/SelectTag.vue";
 import Table from "./components/Table.vue";
 
-const selectedTag = ref({ value: "没有标签", chileren: [] });
+const selectedTag = ref({ value: "没有标签" });
+const columnProps = ref([]);
 </script>
 <style>
 .el-row {
